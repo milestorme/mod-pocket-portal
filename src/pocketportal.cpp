@@ -43,7 +43,7 @@ public:
 
         return false; // Cast the spell on use normally
     }
-void OnGossipSelect(Player* player, Item* item, uint32 /*sender*/, uint32 action) override
+void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 action) override
     {
         switch (action)
         {
