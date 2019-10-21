@@ -1,4 +1,3 @@
-
 -- --------------------------------------------------------------------------------------
 -- Pocket Portal
 -- --------------------------------------------------------------------------------------
@@ -10,10 +9,10 @@ SET
 @FLAGS				:= 134217728, -- BOA
 @FLAGSEXTRA			:= 0,
 @SCALE				:= 0.8,
-@SOURCETYPE 		:= 0,
+@SOURCETYPE 		        := 0,
 @COOLDOWN			:= 30000,
-@TEXT_ID        	:= 300000,
-@GOSSIP_MENU    	:= 50000,
+@TEXT_ID        	        := 300000,
+@GOSSIP_MENU    	        := 50000,
 @SCRIPTNAME			:= "pocket_portal"; -- internalitemhanler
 -- --------------------------------------------------------------------------------------
 -- Teleporter Item
@@ -192,11 +191,11 @@ UPDATE creature_template SET AIName="SmartAI" WHERE entry=128 LIMIT 1;
 -- Set Teleporter Despawn Time
 -- --------------------------------------------------------------------------------------
 SET @ENTRY		:= 128; 	-- CREATURE_TEMPLATE ID
-SET @SOURCETYPE	:= 0; 		-- 0 = CREATURE
+SET @SOURCETYPE	        := 0; 		-- 0 = CREATURE
 SET @SSID		:= 140; 	-- SCRIPT ID
 SET @LINK		:= 0; 		-- LINKED SCRIPT (EXECUTES AFTER)
-SET @EVENTTYPE	:= 25; 		-- 25 = SMART_EVENT_RESET (After spawn, respawn, etc.)
-SET @ACTIONTYPE := 41; 		-- 41 = SMART_ACTION_FORCE_DESPAWN
+SET @EVENTTYPE	        := 25; 		-- 25 = SMART_EVENT_RESET (After spawn, respawn, etc.)
+SET @ACTIONTYPE         := 41; 		-- 41 = SMART_ACTION_FORCE_DESPAWN
 SET @APARM1		:= 15000; 	-- Milliseconds until despawn occurs
 SET @TTYPE		:= 19;  	-- 19 - SMART_TARGET_CLOSEST_CREATURE
 SET @TPARM1		:= 128; 	-- SMART_TARGET CREATURE ID
