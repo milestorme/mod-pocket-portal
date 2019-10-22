@@ -30,7 +30,7 @@ public:
         if (!sConfigMgr->GetBoolDefault("PocketPortal.Enable", true)) 
             return false;  
 
-        if (player->IsInCombat() || player->GetMap()->IsBattleArena() || player->InBattleground())
+       if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
            return false;
 
 
