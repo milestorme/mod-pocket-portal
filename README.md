@@ -16,6 +16,7 @@ Stygiancore Pocket Portal with anti-exploit script.
 
 
 ## Credits
-- [Micrah/Milestorme: Script/Module Creator](https://github.com/milestorme).
-- [stygianisthebest sql pocket portal script](http://stygianthebest.github.io).
-- [rochet2](https://github.com/Rochet2).
+
+*  [Micrah/Milestorme: Script/Module Creator](https://github.com/milestorme).
+*  [stygianisthebest sql pocket portal script](http://stygianthebest.github.io).
+*  [rochet2](https://github.com/Rochet2).
