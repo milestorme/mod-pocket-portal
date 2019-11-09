@@ -10,12 +10,12 @@ Stygiancore Pocket Portal with anti-exploit script.
 
 ```
 1. Simply place the module under the `modules` directory of your AzerothCore source. 
-2. Import the SQL manually to the right Database (auth, world or characters) or with the `db_assembler.sh` (if `include.sh` provided).
+2. Import the SQL manually to the right Database (world).
 3. Re-run cmake and launch a clean build of AzerothCore.
 ```
 
 
 ## Credits
-Micrah/Milestorme: Script/Module Creator(https://github.com/milestorme).
-stygianisthebest sql pocket portal script (http://stygianthebest.github.io).
-rochet2: (https://github.com/Rochet2).
+- [Micrah/Milestorme: Script/Module Creator](https://github.com/milestorme).
+- [stygianisthebest sql pocket portal script](http://stygianthebest.github.io).
+- [rochet2](https://github.com/Rochet2).
