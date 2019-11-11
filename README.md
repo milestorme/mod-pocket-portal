@@ -19,6 +19,6 @@ Stygiancore Pocket Portal with anti-exploit script to stop it being used in BG ,
 
 ## Credits
 
-*  [Micrah/Milestorme]: Script/Module Creator(https://github.com/milestorme).
-*  [stygianisthebest] sql pocket portal(http://stygianthebest.github.io).
-*  [rochet2]Original code(https://github.com/Rochet2).
+*  [Micrah/Milestorme](https://github.com/milestorme) Script/Module Creator.
+*  [stygianisthebest](http://stygianthebest.github.io) sql pocket portal.
+*  [rochet2](https://github.com/Rochet2) Original code.
