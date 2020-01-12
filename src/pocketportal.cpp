@@ -80,9 +80,9 @@ void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 ac
         if (!player || entry == 0)
             return;
 
-        int npcDuration = sConfigMgr->GetIntDefault("Portal.NpcDuration", 60) * IN_MILLISECONDS;
+        int npcDuration = sConfigMgr->GetIntDefault("Portal.NpcDuration", 30) * IN_MILLISECONDS;
         if (npcDuration <= 0) // Safeguard
-            npcDuration = 60;
+            npcDuration = 30;
 
         Creature* npc = player->SummonCreature(entry, player->GetPositionX(), player->GetPositionY(), player->GetPositionZ(), 0, TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT, npcDuration);
         npc->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);

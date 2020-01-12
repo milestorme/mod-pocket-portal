@@ -11,8 +11,8 @@ PocketPortal.Enable = 1
 
 #
 #   Portal.NpcDuration
-#       Description: Time (in seconds) before despawn of summoned NPC
-#       Default:    60 - (Seconds)
-Portal.NpcDuration = 60
+#       Description: Max Time (in seconds) before despawn of summoned NPC
+#       Default:    30 - (Seconds)
+Portal.NpcDuration = 30
 
 ##################################################################################################################
