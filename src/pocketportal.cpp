@@ -30,21 +30,25 @@ public:
         if (!sConfigMgr->GetBoolDefault("PocketPortal.Enable", true)) 
             return false;  
 
-       if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
+        if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
            return false;
-       
-        float rangeCheck = 10.0f;
+	   
+	    float rangeCheck = 10.0f;
         if (player->FindNearestCreature(NPC_VENDOR_A, rangeCheck) ||
             player->FindNearestCreature(NPC_VENDOR_H, rangeCheck))
             return false;
 
+
         player->PlayerTalkClass->ClearMenus();
 
         if (sConfigMgr->GetBoolDefault("PocketPortal.Enable", true))
-          player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Pocket Portal", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
-          player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, item->GetGUID());
+	        player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "|TInterface/ICONS/INV_Misc_Map08:35:35:-23:0|t-> Pocket Portal", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+	
+            player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, item->GetGUID());
+		
         return false; // Cast the spell on use normally
     }
+	
 void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 action) override
     {
         switch (action)
