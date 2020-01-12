@@ -9,10 +9,10 @@ SET
 @FLAGS				:= 134217728, -- BOA
 @FLAGSEXTRA			:= 0,
 @SCALE				:= 0.8,
-@SOURCETYPE 		        := 0,
+@SOURCETYPE 		:= 0,
 @COOLDOWN			:= 30000,
-@TEXT_ID        	        := 300000,
-@GOSSIP_MENU    	        := 50000,
+@TEXT_ID        	:= 300000,
+@GOSSIP_MENU    	:= 50000,
 @SCRIPTNAME			:= "pocket_portal"; -- internalitemhanler
 -- --------------------------------------------------------------------------------------
 -- Teleporter Item
@@ -173,13 +173,13 @@ WHERE
 --
 -- --------------------------------------------------------------------------------------
 DELETE FROM `creature_template` WHERE (`entry`=@ENTRY);
-INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, Healthmodifier, Manamodifier, Armormodifier, faction, npcflag, speed_walk, speed_run, scale, rank, damagemodifier, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName) VALUES
-(128, '30076', "Pocket Portal", "", 'Directions', '50000', 80, 83, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, @SCALE, 1, 1, 1, 2, 7, 138936390, 3, 1, 2, 'SmartAI');
+INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `mindmg`, `maxdmg`, `dmgschool`, `attackpower`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `minrangedmg`, `maxrangedmg`, `rangedattackpower`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES 
+(@ENTRY, 0, 0, 0, 0, 0, 30076, 0, 0, 0, '|cffffcc00Brody|r', '|cff00ccffPocket Portal|r', 'Directions', 50000, 80, 83, 0, 35, 1, 1, 1.14286, 0.8, 1, 0, 0, 0, 0, 1, 0, 0, 1, 776, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 3, 1, 1.56, 1.56, 1.56, 0, 0, 1, 0, 2, '', 1);
 
 -- --------------------------------------------------------------------------------------
 -- Update Creature SmartAI
 -- --------------------------------------------------------------------------------------
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=128 LIMIT 1;
+UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
 
 -- --------------------------------------------------------------------------------------
 -- Give the creature a few items
@@ -191,12 +191,12 @@ UPDATE creature_template SET AIName="SmartAI" WHERE entry=128 LIMIT 1;
 -- Set Teleporter Despawn Time
 -- --------------------------------------------------------------------------------------
 SET @ENTRY		:= 128; 	-- CREATURE_TEMPLATE ID
-SET @SOURCETYPE	        := 0; 		-- 0 = CREATURE
+SET @SOURCETYPE	:= 0; 		-- 0 = CREATURE
 SET @SSID		:= 140; 	-- SCRIPT ID
 SET @LINK		:= 0; 		-- LINKED SCRIPT (EXECUTES AFTER)
-SET @EVENTTYPE	        := 25; 		-- 25 = SMART_EVENT_RESET (After spawn, respawn, etc.)
-SET @ACTIONTYPE         := 41; 		-- 41 = SMART_ACTION_FORCE_DESPAWN
-SET @APARM1		:= 15000; 	-- Milliseconds until despawn occurs
+SET @EVENTTYPE	:= 25; 		-- 25 = SMART_EVENT_RESET (After spawn, respawn, etc.)
+SET @ACTIONTYPE := 41; 		-- 41 = SMART_ACTION_FORCE_DESPAWN
+SET @APARM1		:= 30000; 	-- Milliseconds until despawn occurs
 SET @TTYPE		:= 19;  	-- 19 - SMART_TARGET_CLOSEST_CREATURE
 SET @TPARM1		:= 128; 	-- SMART_TARGET CREATURE ID
 SET @NOTE		:= "Personal Teleporter Despawn";
