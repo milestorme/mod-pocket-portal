@@ -43,8 +43,8 @@ public:
        {
          player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Pocket Portal", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
          player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, item->GetGUID());
-         return false; // Cast the spell on use normally
        }
+       return false; // Cast the spell on use normally
     }
 void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 action) override
     {
