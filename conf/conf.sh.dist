@@ -5,5 +5,5 @@
 #
 
     DB_WORLD_CUSTOM_PATHS+=(
-        $MOD_POCKET_PORTAL_ROOT"/sql/"
+        $MOD_POCKET_PORTAL_ROOT"/sql/world/"
         )

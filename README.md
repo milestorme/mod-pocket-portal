@@ -1,5 +1,6 @@
-# Pocket Portal
-- Latest build status with azerothcore: [![Build Status](https://travis-ci.org/milestorme/mod-pocket-portal.svg?branch=master)](https://travis-ci.org/milestorme/mod-pocket-portal)
+# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
+## Pocket Portal
+- Latest build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-pocket-portal/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-pocket-portal)
 
 ## Description
 
