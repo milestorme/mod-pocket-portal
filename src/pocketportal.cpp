@@ -27,19 +27,24 @@ public:
 
     bool OnUse(Player* player, Item* item, SpellCastTargets const& /*targets*/) override
     {
-        if (!sConfigMgr->GetBoolDefault("PocketPortal.Enable", true)) 
-            return false;  
+       if (!sConfigMgr->GetBoolDefault("PocketPortal.Enable", true))
+       {
+           return false;
+       }
 
        if (player->duel || player->GetMap()->IsBattleArena() || player->InBattleground() || player->HasFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH) || player->isDead()|| player->IsInCombat() || player->IsInFlight() || player->HasStealthAura() || player->HasInvisibilityAura())
+       {
            return false;
+       }
 
+       player->PlayerTalkClass->ClearMenus();
 
-        player->PlayerTalkClass->ClearMenus();
-
-        if (sConfigMgr->GetBoolDefault("PocketPortal.Enable", true))
-          player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Pocket Portal", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
-          player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, item->GetGUID());
-        return false; // Cast the spell on use normally
+       if (sConfigMgr->GetBoolDefault("PocketPortal.Enable", true))
+       {
+         player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Pocket Portal", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+         player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, item->GetGUID());
+       }
+       return false; // Cast the spell on use normally
     }
 void OnGossipSelect(Player* player, Item* /*item*/, uint32 /*sender*/, uint32 action) override
     {
