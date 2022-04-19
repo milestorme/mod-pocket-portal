@@ -173,8 +173,14 @@ WHERE
 --
 -- --------------------------------------------------------------------------------------
 DELETE FROM `creature_template` WHERE (`entry`=@ENTRY);
-INSERT INTO creature_template (`entry`, `modelid1`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `Healthmodifier`, `Manamodifier`, `Armormodifier`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `damagemodifier`, `unit_class`, `unit_flags`, `type`, `type_flags`, `InhabitType`, `RegenHealth`, `flags_extra`, `AiName`) VALUES
-(128, '30076', "Pocket Portal", "", 'Directions', '50000', 80, 83, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, @SCALE, 1, 1, 1, 2, 7, 138936390, 3, 1, 2, 'SmartAI');
+INSERT INTO creature_template (`entry`, `modelid1`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `Healthmodifier`, `Manamodifier`, `Armormodifier`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `damagemodifier`, `unit_class`, `unit_flags`, `type`, `type_flags`, `RegenHealth`, `flags_extra`, `AiName`) VALUES
+(128, '30076', "Pocket Portal", "", 'Directions', '50000', 80, 83, 1.56, 1.56, 1.56, 35, 3, 1, 1.14286, @SCALE, 1, 1, 1, 2, 7, 138936390, 1, 2, 'SmartAI');
+
+
+-- creatture_template_movement
+DELETE FROM `creature_template_movement` WHERE `CreatureId` IN (@ENTRY);
+INSERT INTO `creature_template_movement` (`CreatureId`, `Ground`, `Swim`, `Flight`, `Rooted`, `Chase`, `Random`, `InteractionPauseTimer`) VALUES
+(@ENTRY, 1, 1, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------------------------------------
 -- Update Creature SmartAI
